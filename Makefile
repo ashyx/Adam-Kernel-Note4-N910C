@@ -193,7 +193,7 @@ SUBARCH := $(shell uname -m | sed -e s/i.86/x86/ -e s/x86_64/x86/ \
 # Default value for CROSS_COMPILE is not to prefix executables
 # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
 ARCH		?= arm
-CROSS_COMPILE	?= /home/wanam/dev/toolchains/arm-eabi-4.7/bin/arm-eabi-
+CROSS_COMPILE	?= /home/wanam/dev/toolchains/gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux/bin/arm-linux-gnueabihf-
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
@@ -380,7 +380,7 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -Werror-implicit-function-declaration \
 		   -Wno-format-security \
 		   -fno-delete-null-pointer-checks \
-		   -fdiagnostics-show-option -Werror
+		   -fdiagnostics-show-option
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
 KBUILD_AFLAGS   := -D__ASSEMBLY__
