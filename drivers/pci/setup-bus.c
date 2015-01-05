@@ -1456,8 +1456,7 @@ static void __init pci_realloc_detect(void)
  * second  and later try will clear small leaf bridge res
  * will stop till to the max  deepth if can not find good one
  */
-void __init
-pci_assign_unassigned_resources(void)
+void __init pci_assign_unassigned_resources(void)
 {
 	struct pci_bus *bus;
 	LIST_HEAD(realloc_head); /* list of resources that

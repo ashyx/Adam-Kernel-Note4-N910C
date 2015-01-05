@@ -422,7 +422,7 @@ void dw_pcie_config_l1ss(struct pcie_port *pp)
 	dw_pcie_writel_rc(pp, PCIE_CAP_LTR_ENABLE, dbi_base + PCIE_DEVICE_CTR2STS2);
 }
 
-int dw_pcie_host_init(struct pcie_port *pp)
+int __init dw_pcie_host_init(struct pcie_port *pp)
 {
 	struct device_node *np = pp->dev->of_node;
 	struct of_pci_range range;

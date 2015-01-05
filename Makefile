@@ -193,7 +193,7 @@ SUBARCH := $(shell uname -m | sed -e s/i.86/x86/ -e s/x86_64/x86/ \
 # Default value for CROSS_COMPILE is not to prefix executables
 # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
 ARCH		?= arm
-CROSS_COMPILE	?= /home/wanam/dev/toolchains/gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux/bin/arm-linux-gnueabihf-
+CROSS_COMPILE	?= /home/wanam/dev/toolchains/arm-eabi-4.8/bin/arm-eabi-
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
@@ -675,10 +675,10 @@ ifeq ($(shell $(CONFIG_SHELL) $(srctree)/scripts/gcc-goto.sh $(CC)), y)
 endif
 
 #Disable the whole of the following block to disable LKM AUTH
-# ifeq ($(CONFIG_LKM_USED_TRUE),y)
-#     KBUILD_CFLAGS += -DTIMA_LKM_AUTH_ENABLED -Idrivers/gud/gud-exynos5433/MobiCoreKernelApi/include/
-#     KBUILD_AFLAGS += -DTIMA_LKM_AUTH_ENABLED
-# endif
+ifeq ($(CONFIG_LKM_USED_TRUE),y)
+    KBUILD_CFLAGS += -DTIMA_LKM_AUTH_ENABLED -Idrivers/gud/gud-exynos5433/MobiCoreKernelApi/include/
+    KBUILD_AFLAGS += -DTIMA_LKM_AUTH_ENABLED
+endif
 
 # Add user supplied CPPFLAGS, AFLAGS and CFLAGS as the last assignments
 KBUILD_CPPFLAGS += $(KCPPFLAGS)
