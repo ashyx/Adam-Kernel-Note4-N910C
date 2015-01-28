@@ -675,10 +675,10 @@ ifeq ($(shell $(CONFIG_SHELL) $(srctree)/scripts/gcc-goto.sh $(CC)), y)
 endif
 
 #Disable the whole of the following block to disable LKM AUTH
-ifeq ($(CONFIG_LKM_USED_TRUE),y)
-    KBUILD_CFLAGS += -DTIMA_LKM_AUTH_ENABLED -Idrivers/gud/gud-exynos5433/MobiCoreKernelApi/include/
-    KBUILD_AFLAGS += -DTIMA_LKM_AUTH_ENABLED
-endif
+#ifeq ($(CONFIG_LKM_USED_TRUE),y)
+#    KBUILD_CFLAGS += -DTIMA_LKM_AUTH_ENABLED -Idrivers/gud/gud-exynos5433/MobiCoreKernelApi/include/
+#    KBUILD_AFLAGS += -DTIMA_LKM_AUTH_ENABLED
+#endif
 
 # Add user supplied CPPFLAGS, AFLAGS and CFLAGS as the last assignments
 KBUILD_CPPFLAGS += $(KCPPFLAGS)

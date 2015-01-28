@@ -1860,6 +1860,7 @@
 0x00000000	input_ff_effect_from_user	vmlinux	EXPORT_SYMBOL_GPL
 0x00000000	mfd_cell_enable	vmlinux	EXPORT_SYMBOL
 0x00000000	attribute_container_register	vmlinux	EXPORT_SYMBOL_GPL
+0x00000000	check_decon_tv_op	vmlinux	EXPORT_SYMBOL
 0x00000000	inetpeer_invalidate_tree	vmlinux	EXPORT_SYMBOL
 0x00000000	__neigh_create	vmlinux	EXPORT_SYMBOL
 0x00000000	clock_t_to_jiffies	vmlinux	EXPORT_SYMBOL
