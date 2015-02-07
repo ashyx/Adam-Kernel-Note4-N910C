@@ -40,7 +40,7 @@
 
 #include <linux/of_gpio.h>
 
-#define FMT_WAKE_TIME   (HZ/4)
+#define FMT_WAKE_TIME   (HZ/2)
 #define RFS_WAKE_TIME   (HZ)
 #define RAW_WAKE_TIME   (HZ*2)
 

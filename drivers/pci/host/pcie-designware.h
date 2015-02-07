@@ -67,7 +67,7 @@ void dw_pcie_msi_init(struct pcie_port *pp);
 #endif
 int dw_pcie_link_up(struct pcie_port *pp);
 void dw_pcie_setup_rc(struct pcie_port *pp);
-int dw_pcie_host_init(struct pcie_port *pp);
+__init int dw_pcie_host_init(struct pcie_port *pp);
 int dw_pcie_setup(int nr, struct pci_sys_data *sys);
 struct pci_bus *dw_pcie_scan_bus(int nr, struct pci_sys_data *sys);
 int dw_pcie_map_irq(const struct pci_dev *dev, u8 slot, u8 pin);
