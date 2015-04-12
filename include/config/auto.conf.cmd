@@ -100,7 +100,6 @@ deps_config := \
 	drivers/secfilter/Kconfig \
 	drivers/ice40lm/Kconfig \
 	drivers/irled/Kconfig \
-	drivers/gud/sec-os-ctrl/Kconfig \
 	drivers/gud/gud-exynos5433/sec-os-booster/Kconfig \
 	drivers/gud/gud-exynos5433/Kconfig \
 	drivers/gud/gud-exynos5430/sec-os-ctrl/Kconfig \
@@ -253,6 +252,7 @@ deps_config := \
 	drivers/dma/sh/Kconfig \
 	drivers/dma/bestcomm/Kconfig \
 	drivers/dma/Kconfig \
+	drivers/esoc/Kconfig \
 	drivers/rtc/Kconfig \
 	drivers/edac/Kconfig \
 	drivers/infiniband/ulp/isert/Kconfig \
@@ -780,6 +780,7 @@ deps_config := \
 	drivers/base/regmap/Kconfig \
 	drivers/base/Kconfig \
 	drivers/Kconfig \
+	net/ipc_router/Kconfig \
 	drivers/nfc/microread/Kconfig \
 	drivers/nfc/pn544/Kconfig \
 	drivers/nfc/Kconfig \
@@ -815,6 +816,7 @@ deps_config := \
 	net/can/Kconfig \
 	drivers/net/hamradio/Kconfig \
 	net/ax25/Kconfig \
+	net/rmnet_data/Kconfig \
 	net/netlink/Kconfig \
 	net/vmw_vsock/Kconfig \
 	net/openvswitch/Kconfig \

@@ -756,7 +756,7 @@ static struct pcie_host_ops exynos_pcie_host_ops = {
 	.host_init = exynos_pcie_host_init,
 };
 
-static int __init add_pcie_port(struct pcie_port *pp, struct platform_device *pdev)
+static int add_pcie_port(struct pcie_port *pp, struct platform_device *pdev)
 {
 	int ret;
 
@@ -1231,7 +1231,6 @@ static int exynos_pcie_resume_noirq(struct device *dev)
 	writel(readl(g_pcie->gpio_base + 0x8) | (0x3 << 12), g_pcie->gpio_base + 0x8);
 
 	gpio_set_value(g_pcie->perst_gpio, 1);
-	msleep(80);
 	exynos_pcie_host_init(&g_pcie->pp);
 
 	/* setup ATU for cfg/mem outbound */

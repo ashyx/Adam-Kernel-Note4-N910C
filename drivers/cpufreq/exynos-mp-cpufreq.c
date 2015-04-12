@@ -47,16 +47,9 @@
 #ifdef CONFIG_SOC_EXYNOS5422_REV_0
 #define POWER_COEFF_15P		57 /* percore param */
 #define POWER_COEFF_7P		11 /* percore  param */
-#endif
-
-#ifdef CONFIG_SOC_EXYNOS5430
+#else
 #define POWER_COEFF_15P		48 /* percore param */
 #define POWER_COEFF_7P		9 /* percore  param */
-#endif
-
-#ifdef CONFIG_SOC_EXYNOS5433
-#define POWER_COEFF_15P	55 /* percore param */
-#define POWER_COEFF_7P	13 /* percore param */
 #endif
 
 #define VOLT_RANGE_STEP		25000
@@ -1411,7 +1404,7 @@ static ssize_t store_cpu_min_freq(struct kobject *kobj, struct attribute *attr,
 	if (input > 0)
 		input = min(input, (int)freq_max[CA15]);
 
-	if (pm_qos_request_active(&min_cpu_qos))
+	if (pm_qos_request_active(&min_cpu_qos_real))
 		pm_qos_update_request(&min_cpu_qos_real, input);
 
 	return count;
@@ -1428,7 +1421,7 @@ static ssize_t store_cpu_max_freq(struct kobject *kobj, struct attribute *attr,
 	if (input > 0)
 		input = max(input, (int)freq_min[CA15]);
 
-	if (pm_qos_request_active(&max_cpu_qos))
+	if (pm_qos_request_active(&max_cpu_qos_real))
 		pm_qos_update_request(&max_cpu_qos_real, input);
 
 	return count;
@@ -1492,7 +1485,7 @@ static ssize_t store_kfc_min_freq(struct kobject *kobj, struct attribute *attr,
 	if (input > 0)
 		input = min(input, (int)freq_max[CA7]);
 
-	if (pm_qos_request_active(&min_kfc_qos))
+	if (pm_qos_request_active(&min_kfc_qos_real))
 		pm_qos_update_request(&min_kfc_qos_real, input);
 
 	return count;
@@ -1509,7 +1502,7 @@ static ssize_t store_kfc_max_freq(struct kobject *kobj, struct attribute *attr,
 	if (input > 0)
 		input = max(input, (int)freq_min[CA7]);
 
-	if (pm_qos_request_active(&max_kfc_qos))
+	if (pm_qos_request_active(&max_kfc_qos_real))
 		pm_qos_update_request(&max_kfc_qos_real, input);
 
 	return count;
